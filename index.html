@@ -46,6 +46,13 @@
       font-size: 0.9em;
     }
 
+    .modal-body img {
+      margin-bottom: 20px;
+      max-width: 360px;
+      border: 1px solid #c8c8c8;
+      border-radius: 15px;
+    }
+
     #prm {
       background-color: #0099ab;
       border-color: #0099ab;
@@ -75,7 +82,7 @@
           인터넷 연결 도우미
         </p>
 
-        <p class="text-muted">버전 : 1.0.3</p>
+        <p class="text-muted">버전 : 1.0.4</p>
 
         <p class="text-muted">
           Soongsil_WIFI 접속 시 로그인을 할 수 없어 인터넷 사용이 불가능한 경우
@@ -87,7 +94,7 @@
       <br />
       <br />
       <div class="d-grid gap-2 d-md-auto">
-        <h3>0. 숭파이 웹 오프라인으로 저장하기</h3>
+        <h3>숭파이 웹 오프라인으로 저장하기</h3>
         <p class="text-muted">
           인터넷이 불가능할 경우를 대비하여 기기에 미리 저장하세요!
         </p>
@@ -123,7 +130,26 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <h1></h1>
+                <h5>1. 숭파이 웹에 접속한 상태에서 하단 공유를 선택합니다.</h5>
+                <img src="./guide/safari/1.PNG" />
+
+                <h5>2. 읽기 목록에 추가합니다.</h5>
+                <img src="./guide/safari/2.PNG" />
+
+                <h5>3. 하단 읽기 목록을 선택합니다.</h5>
+                <img src="./guide/safari/3.PNG" />
+
+                <h5>
+                  4. 추가된 숭파이를 왼쪽으로 스와이프하여 오프라인 저장을
+                  선택합니다.
+                </h5>
+                <img src="./guide/safari/4.PNG" />
+
+                <h5>
+                  5. 와이파이와 모바일 데이터를 끄고 읽기 목록에 추가된 숭파이
+                  페이지를 선택해 잘 저장되었는지 확인합니다.
+                </h5>
+                <img src="./guide/safari/5.PNG" />
               </div>
               <div class="modal-footer">
                 <button
@@ -143,13 +169,8 @@
         >
         <br />
         <br />
-        <h3>1. 로그인 시도하기</h3>
-        <p class="text-muted">
-          Soongsil_WIFI 에 연결했지만 인터넷을 사용할 수 없는 경우
-          시도합니다.<br />
-          네트워크 환경에 따라 여러 번 로그인해야 할 수도 있습니다.
-        </p>
 
+        <h3>로그인 시도하기</h3>
         <a
           href="http://auth.soongsil.ac.kr/login/login.do?ipaddress=010.021.020.050&macaddress=1E%3AB5%3A70%3AB6%3AC3%3A5E&vlantag=0055&sysid=0012&btype=014&scode=&fwurl=hanarotg.github.io/others/soongfi/success.html"
           class="btn btn-lg btn-primary"
@@ -158,26 +179,29 @@
           >숭파이 로그인</a
         >
 
+        <hr />
+
         <br />
         <br />
-        <h3>2. 로그인 페이지 호출 실패 시</h3>
+        <h3>[도움말] 로그인 페이지 호출 실패 시</h3>
         <p class="text-muted">
-          <a href="">1. 로그인 시도하기</a> 시 '로그인 페이지 호출 실패'
-          페이지가 뜨는 경우 시도합니다.<br />
+          <a href="#">로그인 시도하기</a> 시 '로그인 페이지 호출 실패' 페이지가
+          뜨는 경우 시도합니다.<br />
           [주의] Soongsil_WIFI 에 연결된 상태에서만 시도해주세요.
         </p>
 
         <a
           href="http://192.168.0.1/"
           class="btn btn-lg btn-primary"
-          id="prm"
+          id="sec"
           target="_blank"
           >숭파이 라우터 접속으로 로그인 시도</a
         >
 
+        <hr />
         <br />
 
-        <h3>3. Soongsil_WIFI 인터넷은 되나 비정상적으로 느린 경우</h3>
+        <h3>[도움말] Soongsil_WIFI 인터넷은 되나 비정상적으로 느린 경우</h3>
 
         <p class="text-muted">
           3-1. Soongsil_WIFI 연결을 끊어주세요.<br />
@@ -188,22 +212,24 @@
         <a
           href="http://auth.soongsil.ac.kr/login/login.do?ipaddress=010.021.020.050&macaddress=1E%3AB5%3A70%3AB6%3AC3%3A5E&vlantag=0055&sysid=0012&btype=014&scode=&fwurl=hanarotg.github.io/others/soongfi/success.html"
           class="btn btn-lg btn-primary"
-          id="prm"
+          id="sec"
           target="_blank"
           >숭파이 로그인 #2</a
         >
 
+        <hr />
         <br />
         <br />
-        <h3>4. 기타 시도</h3>
+        <h3>[도움말] 기타 시도</h3>
         <a
           href="https://captive.apple.com"
           class="btn btn-lg btn-primary"
-          id="prm"
+          id="sec"
           target="_blank"
           >apple captive portal 접속(IOS만 해당)</a
         >
 
+        <hr />
         <br />
         <h3>버그 및 건의사항 제출하기</h3>
         <p class="text-muted">
@@ -212,7 +238,7 @@
         <a
           href="https://forms.gle/QVco9StJ2ZK4vCa87"
           class="btn btn-lg btn-primary"
-          id="sec"
+          id="prm"
           target="_blank"
           >버그 및 건의사항 제출</a
         >
