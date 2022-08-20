@@ -1,5 +1,7 @@
 <html>
   <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.ico" />
+
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -8,18 +10,41 @@
       crossorigin="anonymous"
     />
 
+    <!-- JS -->
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>숭파이 - 연결 성공</title>
+    <title>숭파이 - 웹</title>
   </head>
 
   <style>
     body {
-      color: #ffffff;
-      background-color: #0099ab;
+      color: #363636;
+      background-color: #f0f0f0;
     }
 
     h1 {
       font-weight: bold;
+    }
+
+    h3 {
+      font-weight: bold;
+    }
+
+    a {
+      color: #0099ab;
+      text-decoration: none;
+    }
+
+    #prm {
+      background-color: #0099ab;
+      border-color: #0099ab;
+      border-radius: 10px;
     }
 
     #sec {
@@ -31,41 +56,168 @@
   </style>
 
   <body>
-    <div class="container" style="text-align: center">
+    <div class="container" style="max-width: 768px">
+      <div style="text-align: center">
+        <br />
+        <img
+          src="./soongfi.png"
+          style="width: 64px; height: 64px; border-radius: 16px"
+        />
+
+        <h1>숭파이(WEB)</h1>
+        <p class="text-muted">
+          숭실 교내 와이파이<br />
+          인터넷 연결 도우미
+        </p>
+
+        <p class="text-muted">버전 : 1.0.2</p>
+
+        <p class="text-muted">
+          Soongsil_WIFI 접속 시 로그인을 할 수 없어 인터넷 사용이 불가능한 경우
+          또는<br />
+          연결이 되었으나 인터넷이 비정상적으로 느린 경우을 해결합니다.
+        </p>
+      </div>
+
       <br />
       <br />
-      <img
-        src="./soongfi.png"
-        style="width: 64px; height: 64px; border-radius: 16px"
-      />
-
-      <h1>숭파이(WEB)</h1>
-      <p>
-        숭실 교내 와이파이<br />
-        인터넷 연결 도우미
-      </p>
-
-      <br />
-
-      <h1>
-        정상적으로<br />
-        연결되었습니다!
-      </h1>
-      <p>이 페이지는 인터넷이 연결된 상태에서만 볼 수 있습니다.</p>
-
-      <br />
-
-      <p>
-        숭파이가 도움이 되셨다면 추천해주세요! IOS 앱 출시를 위해 여러분의
-        추천이 필요합니다!
-      </p>
       <div class="d-grid gap-2 d-md-auto">
+        <h3>0. 숭파이 웹 오프라인으로 저장하기</h3>
+        <p class="text-muted">
+          인터넷이 불가능할 경우를 대비하여 기기에 미리 저장하세요!
+        </p>
+        <a
+          href=""
+          class="btn btn-lg btn-secondary"
+          id="sec"
+          target="_blank"
+          data-bs-toggle="modal"
+          data-bs-target="#safariGuide"
+          >사파리에서(IOS) 저장하기</a
+        >
+
+        <!-- 사파리에서 저장하기 - Modal -->
+        <div
+          class="modal modal-fullscreen"
+          id="safariGuide"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  사파리(IOS)에서 저장하기 가이드
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <h1></h1>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  닫기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <a href="" class="btn btn-lg btn-secondary" id="sec" target="_blank"
-          >추천하기</a
+          >크롬에서(안드로이드) 저장하기[준비중]</a
+        >
+        <br />
+        <br />
+        <h3>1. 로그인 시도하기</h3>
+        <p class="text-muted">
+          Soongsil_WIFI 에 연결했지만 인터넷을 사용할 수 없는 경우
+          시도합니다.<br />
+          네트워크 환경에 따라 여러 번 로그인해야 할 수도 있습니다.
+        </p>
+
+        <a
+          href="http://auth.soongsil.ac.kr/login/login.do?ipaddress=010.021.020.050&macaddress=1E%3AB5%3A70%3AB6%3AC3%3A5E&vlantag=0055&sysid=0012&btype=014&scode=&fwurl=hanarotg.github.io/others/soongfi/success.html"
+          class="btn btn-lg btn-primary"
+          id="prm"
+          target="_blank"
+          >숭파이 로그인</a
+        >
+
+        <br />
+        <br />
+        <h3>2. 로그인 페이지 호출 실패 시</h3>
+        <p class="text-muted">
+          <a href="">1. 로그인 시도하기</a> 시 '로그인 페이지 호출 실패'
+          페이지가 뜨는 경우 시도합니다.<br />
+          [주의] Soongsil_WIFI 에 연결된 상태에서만 시도해주세요.
+        </p>
+
+        <a
+          href="http://192.168.0.1/"
+          class="btn btn-lg btn-primary"
+          id="prm"
+          target="_blank"
+          >숭파이 라우터 접속으로 로그인 시도</a
+        >
+
+        <br />
+
+        <h3>3. Soongsil_WIFI 인터넷은 되나 비정상적으로 느린 경우</h3>
+
+        <p class="text-muted">
+          3-1. Soongsil_WIFI 연결을 끊어주세요.<br />
+          3-2. 인터넷이 되는 다른 와이파이(또는 모바일 데이터)에 연결하세요.<br />
+          3-3. 아래 <b>숭파이 로그인 #2</b>를 눌러 로그인해주세요.<br />
+          3-4. 다시 Soongsil_WIFI에 연결하여 인터넷 속도를 확인해주세요.<br />
+        </p>
+        <a
+          href="http://auth.soongsil.ac.kr/login/login.do?ipaddress=010.021.020.050&macaddress=1E%3AB5%3A70%3AB6%3AC3%3A5E&vlantag=0055&sysid=0012&btype=014&scode=&fwurl=hanarotg.github.io/others/soongfi/success.html"
+          class="btn btn-lg btn-primary"
+          id="prm"
+          target="_blank"
+          >숭파이 로그인 #2</a
+        >
+
+        <br />
+        <br />
+        <h3>4. 기타 시도</h3>
+        <a
+          href="https://captive.apple.com"
+          class="btn btn-lg btn-primary"
+          id="prm"
+          target="_blank"
+          >apple captive portal 접속(IOS만 해당)</a
+        >
+
+        <br />
+        <h3>버그 및 건의사항 제출하기</h3>
+        <p class="text-muted">
+          문제가 있나요? 알려주세요! 직접 확인해보곘습니다.
+        </p>
+        <a
+          href="https://forms.gle/QVco9StJ2ZK4vCa87"
+          class="btn btn-lg btn-primary"
+          id="sec"
+          target="_blank"
+          >버그 및 건의사항 제출</a
         >
       </div>
+
+      <hr />
+      <p class="text-muted">2022 soongfi</p>
       <br />
-      <br />
+      <a href="https://github.com/soongfi">깃허브</a>
+      <br /><br />
     </div>
   </body>
 </html>
