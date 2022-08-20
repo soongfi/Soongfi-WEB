@@ -2,6 +2,10 @@
   <head>
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon.ico" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -25,15 +29,6 @@
   <style>
     body {
       color: #363636;
-      background-color: #f0f0f0;
-    }
-
-    h1 {
-      font-weight: bold;
-    }
-
-    h3 {
-      font-weight: bold;
     }
 
     a {
@@ -53,6 +48,11 @@
       border-radius: 15px;
     }
 
+    .btn {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
     #prm {
       background-color: #0099ab;
       border-color: #0099ab;
@@ -61,11 +61,31 @@
 
     #sec {
       color: #0099ab;
-      background-color: #d8d8d8;
-      border-color: #d8d8d8;
+      background-color: #e8e8e8;
+      border-color: #e8e8e8;
       border-radius: 10px;
     }
   </style>
+
+  <script>
+    function getUrl() {
+      const ipAddress =
+        Math.floor(Math.random() * 255) +
+        1 +
+        "." +
+        Math.floor(Math.random() * 255) +
+        "." +
+        Math.floor(Math.random() * 255) +
+        "." +
+        Math.floor(Math.random() * 255);
+
+      const macAddress = "XX:XX:XX:XX:XX:XX".replace(/X/g, function () {
+        return "0123456789ABCDEF".charAt(Math.floor(Math.random() * 16));
+      });
+
+      window.location.href = `http://auth.soongsil.ac.kr/login/login.do?ipaddress=${ipAddress}&macaddress=${macAddress}&vlantag=0055&sysid=0012&btype=014&scode=&fwurl=soongfi.github.io/Soongfi-WEB/success.html`;
+    }
+  </script>
 
   <body>
     <div class="container" style="max-width: 768px">
@@ -81,111 +101,167 @@
           숭실 교내 와이파이<br />
           인터넷 연결 도우미
         </p>
-
-        <p class="text-muted">버전 : 1.0.5</p>
-
+        <embed
+          style="
+            border-radius: 15px;
+            padding: 10px;
+            margin: auto;
+            width: 150px;
+            height: 60px;
+          "
+          src="https://joey.team/block?block_id=oXXGJv7LSQyKPBO7nBuN&id=Ix7AG1OFEYV5kRn6n9yWDkVovbx1"
+        />
+        <br />
+        <p class="badge bg-secondary">버전 : 1.0.6</p>
+        <br />
         <p class="text-muted">
           Soongsil_WIFI 접속 시 로그인을 할 수 없어 인터넷 사용이 불가능한 경우
           또는<br />
-          연결이 되었으나 인터넷이 비정상적으로 느린 경우을 해결합니다.
+          연결이 되었으나 인터넷이 비정상적으로 느린 문제를 해결합니다.
         </p>
       </div>
 
       <br />
       <br />
-      <div class="d-grid gap-2 d-md-auto">
-        <h3>숭파이 웹 오프라인으로 저장하기</h3>
+      <div class="alert alert-info">
+        <h5>숭파이 웹 오프라인으로 저장하기</h5>
         <p class="text-muted">
           인터넷이 불가능할 경우를 대비하여 기기에 미리 저장하세요!
         </p>
+        <li>
+          <a
+            class="alert-link"
+            href=""
+            data-bs-toggle="modal"
+            data-bs-target="#safariGuide"
+            >사파리에서(IOS) 저장하는 방법</a
+          >
+        </li>
+        <li>
+          <a
+            href=""
+            class="alert-link"
+            data-bs-toggle="modal"
+            data-bs-target="#chromeGuide"
+            >크롬에서(안드로이드) 저장하는 방법[준비중]</a
+          >
+        </li>
+      </div>
+
+      <br />
+      <br />
+      <p class="text-muted">2022 soongfi</p>
+      <br />
+      <a href="https://github.com/soongfi">깃허브</a>
+      <br /><br />
+
+      <div
+        class="sticky-bottom"
+        style="
+          padding: 10px;
+          background-color: #ffffff;
+          border-top: 1px solid #c8c8c8;
+        "
+      >
         <a
-          href=""
-          class="btn btn-lg btn-secondary"
+          class="btn btn-lg btn-primary"
           id="sec"
           target="_blank"
           data-bs-toggle="modal"
-          data-bs-target="#safariGuide"
-          >사파리에서(IOS) 저장하기</a
+          data-bs-target="#help"
+          >문제가 있나요?</a
         >
-
-        <!-- 사파리에서 저장하기 - Modal -->
-        <div
-          class="modal modal-fullscreen"
-          id="safariGuide"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  사파리(IOS)에서 저장하기 가이드
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <h5>1. 숭파이 웹에 접속한 상태에서 하단 공유를 선택합니다.</h5>
-                <img src="./guide/safari/1.PNG" />
-
-                <h5>2. 읽기 목록에 추가합니다.</h5>
-                <img src="./guide/safari/2.PNG" />
-
-                <h5>3. 하단 읽기 목록을 선택합니다.</h5>
-                <img src="./guide/safari/3.PNG" />
-
-                <h5>
-                  4. 추가된 숭파이를 왼쪽으로 스와이프하여 오프라인 저장을
-                  선택합니다.
-                </h5>
-                <img src="./guide/safari/4.PNG" />
-
-                <h5>
-                  5. 와이파이와 모바일 데이터를 끄고 읽기 목록에 추가된 숭파이
-                  페이지를 선택해 잘 저장되었는지 확인합니다.
-                </h5>
-                <img src="./guide/safari/5.PNG" />
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  닫기
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <a href="" class="btn btn-lg btn-secondary" id="sec" target="_blank"
-          >크롬에서(안드로이드) 저장하기[준비중]</a
-        >
-        <br />
-        <br />
-
-        <h3>로그인 시도하기</h3>
         <a
-          href="http://auth.soongsil.ac.kr/login/login.do?ipaddress=010.021.020.050&macaddress=1E%3AB5%3A70%3AB6%3AC3%3A5E&vlantag=0055&sysid=0012&btype=014&scode=&fwurl=soongfi.github.io/Soongfi-WEB/success.html"
+          href=""
+          onClick="getUrl()"
           class="btn btn-lg btn-primary"
           id="prm"
           target="_blank"
           >숭파이 로그인</a
         >
+      </div>
+    </div>
+  </body>
+</html>
 
-        <hr />
+<!-- 사파리에서 저장하기 - Modal -->
+<div
+  class="modal"
+  id="safariGuide"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          사파리(IOS)에서 저장하는 방법
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h5>1. 숭파이 웹에 접속한 상태에서 하단 공유를 선택합니다.</h5>
+        <img src="./guide/safari/1.PNG" />
 
-        <br />
-        <br />
-        <h3>[도움말] 로그인 페이지 호출 실패 시</h3>
+        <h5>2. 읽기 목록에 추가합니다.</h5>
+        <img src="./guide/safari/2.PNG" />
+
+        <h5>3. 하단 읽기 목록을 선택합니다.</h5>
+        <img src="./guide/safari/3.PNG" />
+
+        <h5>
+          4. 추가된 숭파이를 왼쪽으로 스와이프하여 오프라인 저장을 선택합니다.
+        </h5>
+        <img src="./guide/safari/4.PNG" />
+
+        <h5>
+          5. 와이파이와 모바일 데이터를 끄고 읽기 목록에 추가된 숭파이 페이지를
+          선택해 잘 저장되었는지 확인합니다.
+        </h5>
+        <img src="./guide/safari/5.PNG" />
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-lg btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 문제가 있나요? 도움말 -->
+<div
+  class="modal"
+  id="help"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">도움말</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h3>로그인 페이지 호출 실패 시</h3>
         <p class="text-muted">
-          <a href="#">로그인 시도하기</a> 시 '로그인 페이지 호출 실패' 페이지가
+          <a href="#">숭파이 로그인</a> 시 '로그인 페이지 호출 실패' 페이지가
           뜨는 경우 시도합니다.<br />
           [주의] Soongsil_WIFI 에 연결된 상태에서만 시도해주세요.
         </p>
@@ -198,38 +274,58 @@
           >숭파이 라우터 접속으로 로그인 시도</a
         >
 
-        <hr />
+        <br />
+        <br />
         <br />
 
-        <h3>[도움말] Soongsil_WIFI 인터넷은 되나 비정상적으로 느린 경우</h3>
+        <h3>
+          Soongsil_WIFI 인터넷이<br />
+          비정상적으로 느려요.
+        </h3>
 
-        <p class="text-muted">
+        <p>
           3-1. Soongsil_WIFI 연결을 끊어주세요.<br />
           3-2. 인터넷이 되는 다른 와이파이(또는 모바일 데이터)에 연결하세요.<br />
-          3-3. 아래 <b>숭파이 로그인 #2</b>를 눌러 로그인해주세요.<br />
+          3-3. 아래 <b>숭파이 로그인</b>를 눌러 로그인해주세요.<br />
+          <a
+            href=""
+            onClick="getUrl()"
+            class="btn btn-lg btn-primary"
+            id="sec"
+            target="_blank"
+            >숭파이 로그인</a
+          ><br />
           3-4. 다시 Soongsil_WIFI에 연결하여 인터넷 속도를 확인해주세요.<br />
         </p>
+
+        <br />
+        <br />
+        <br />
+        <h3>기타 시도</h3>
+
         <a
-          href="http://auth.soongsil.ac.kr/login/login.do?ipaddress=010.021.020.050&macaddress=1E%3AB5%3A70%3AB6%3AC3%3A5E&vlantag=0055&sysid=0012&btype=014&scode=&fwurl=soongfi.github.io/Soongfi-WEB/success.html"
+          href="http://captive.apple.com/"
           class="btn btn-lg btn-primary"
           id="sec"
           target="_blank"
-          >숭파이 로그인 #2</a
+          >Apple Captive Portal 접속(IOS, MAC만 해당)</a
         >
-
-        <hr />
-        <br />
-        <br />
-        <h3>[도움말] 기타 시도</h3>
         <a
-          href="https://captive.apple.com"
+          href="http://google.com/generate_204"
           class="btn btn-lg btn-primary"
           id="sec"
           target="_blank"
-          >apple captive portal 접속(IOS만 해당)</a
+          >Google 204 접속(안드로이드만 해당)</a
         >
-
-        <hr />
+        <a
+          href="http://www.msftncsi.com/ncsi.txt"
+          class="btn btn-lg btn-primary"
+          id="sec"
+          target="_blank"
+          >MS NCSI 접속(Windows만 해당)</a
+        >
+        <br />
+        <br />
         <br />
         <h3>버그 및 건의사항 제출하기</h3>
         <p class="text-muted">
@@ -243,12 +339,15 @@
           >버그 및 건의사항 제출</a
         >
       </div>
-
-      <hr />
-      <p class="text-muted">2022 soongfi</p>
-      <br />
-      <a href="https://github.com/soongfi">깃허브</a>
-      <br /><br />
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-lg btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          닫기
+        </button>
+      </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
